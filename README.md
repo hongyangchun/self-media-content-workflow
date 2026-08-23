@@ -6,13 +6,15 @@
 
 **简体中文** | [English](README.en.md)
 
-一套通用、模块化的自媒体内容生产与经营 Agent Skills：从模糊需求到创作简报、账号策略、热点与竞品研究、平台原生文案、短视频方案、公众号排版发布、数据复盘和交付归档，覆盖内容生产的完整闭环。
+一套通用、模块化的自媒体内容生产与经营 Agent Skills：从模糊需求到创作简报、账号策略、热点与竞品研究、平台原生文案、短视频方案、数字人视频制片、公众号排版发布、数据复盘和交付归档，覆盖内容生产的完整闭环。
 
 - **工具无关** — 不绑定特定模型、浏览器、图片、视频、发布或数据服务，运行时自动发现当前环境的可用能力
 - **平台原生** — 同一母题共享事实与证据，为每个平台分别设计标题、开头、结构和行动
 - **人工在环** — 方向、平台、标题、终稿、发布授权五个强制确认点，默认只产出草稿或发布包，从不自动群发
 - **证据优先** — 关键数字必须有来源，区分事实、判断、推断与建议，不编造数据、体验和收益
 - **视觉体系化** — 内置 8 套配图风格预设与平台路由，先选风格再出图，同组不混用，账号偏好优先于预设默认值
+
+数字人制片中，头像与声音素材由用户在了解所选服务商当前数据处理条款后，亲自在该平台上传、创建并选定。任务文件、注册表和仓库不保存原始头像或录音、其本机路径、临时链接及平台私有标识，只索引数字人生成片段、最终视频、字幕文件等交付物的路径。
 
 ## 架构
 
@@ -36,7 +38,7 @@ graph TD
 | [`self-media-content-strategy`](skills/self-media-content-strategy/SKILL.md) | 账号定位、内容配比、栏目、选题池和内容日历 |
 | [`self-media-trend-radar`](skills/self-media-trend-radar/SKILL.md) | 热点追踪、关键词研究、竞品拆解和原创选题 |
 | [`self-media-platform-copywriting`](skills/self-media-platform-copywriting/SKILL.md) | X、小红书、公众号和短视频平台原生文案，含配图风格库 |
-| [`self-media-short-video`](skills/self-media-short-video/SKILL.md) | 钩子、口播、分镜、字幕和拍摄方案 |
+| [`self-media-short-video`](skills/self-media-short-video/SKILL.md) | 钩子、口播、分镜、字幕、拍摄方案和可选数字人制片 |
 | [`self-media-content-analytics`](skills/self-media-content-analytics/SKILL.md) | 数据质量、基线比较、归因、决策和实验 |
 | [`self-media-content-delivery`](skills/self-media-content-delivery/SKILL.md) | 里程碑保存、版本、路径核验和完整发布包 |
 | [`self-media-wechat-publisher`](skills/self-media-wechat-publisher/SKILL.md) | 公众号排版、图片上传、草稿箱写入和小绿书图片消息 |
@@ -99,7 +101,7 @@ npx skills add yanhua1010/self-media-content-workflow --skill self-media-content
 
 ```text
 需求澄清 → 方向确认* → 研究与证据 → 平台确认* → 发布预检
-→ 平台原生初稿 → 标题确认* → 素材生成 → 质量审校
+→ 平台原生初稿 → 标题确认* → 素材生成（真人/数字人） → 质量审校
 → 终稿确认* → 发布授权* → 草稿或发布包 → 数据复盘
 ```
 
@@ -112,6 +114,8 @@ npx skills add yanhua1010/self-media-content-workflow --skill self-media-content
 - 不使用主账号登录态自动采集竞品
 - 不自动点赞、评论、关注、私信或发布
 - 不在任务卡、日志或仓库保存 Cookie、Token 和 Secret
+- 数字人头像、肖像和声音必须有使用权利；由用户本人在所选平台手动上传和选定，并在上传前了解平台当前的数据处理条款
+- 任务卡、内容注册表和仓库不保存原始头像、录音及其本机路径、临时链接或数字人平台私有标识，只记录生成片段、成片和字幕等交付物的索引路径；按目标平台确认必要的 AI/数字人披露
 - 验证码、限流和平台风控出现时立即停止
 - 近期产品、价格、版本和平台规则优先核验官方来源
 - 不编造数据、体验、收益、用户评价和测试结果

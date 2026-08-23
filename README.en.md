@@ -6,13 +6,15 @@
 
 [简体中文](README.md) | **English**
 
-A modular, tool-agnostic suite of agent skills for social-media content operations: from a vague idea to a confirmed brief, account strategy, trend and competitor research, platform-native copy, short-video packages, WeChat draft publishing, performance reviews, and verified delivery — the full content loop.
+A modular, tool-agnostic suite of agent skills for social-media content operations: from a vague idea to a confirmed brief, account strategy, trend and competitor research, platform-native copy, short-video packages, optional digital-human production, WeChat draft publishing, performance reviews, and verified delivery — the full content loop.
 
 - **Tool-agnostic** — no binding to a specific model, browser, image, video, publishing, or analytics service; capabilities are discovered from the running environment
 - **Platform-native** — one topic shares facts and evidence, while titles, openings, structure, and calls to action are designed per platform
 - **Human-in-the-loop** — five mandatory approval gates (direction, platforms, title, final copy, publishing); drafts and publishing packages by default, never automatic broadcasting
 - **Evidence-first** — every key number needs a source; facts, opinions, inferences, and advice stay separated; no fabricated data, experience, or results
 - **Systematic visuals** — eight built-in image-style presets with platform routing; a style is chosen before generation, one style per image set, and account preferences override preset defaults
+
+For digital-human production, the user must personally upload and select likeness and voice assets in the chosen provider after reviewing its current data-processing terms. Task files, registries, and the repository must not store the original portrait or recording, their local paths, temporary links, or provider-private identifiers; they only index paths of deliverables such as generated clips, final videos, and caption files.
 
 ## Architecture
 
@@ -36,7 +38,7 @@ graph TD
 | [`self-media-content-strategy`](skills/self-media-content-strategy/SKILL.md) | Positioning, content mix, series, topic pool, and calendar |
 | [`self-media-trend-radar`](skills/self-media-trend-radar/SKILL.md) | Trend tracking, keyword research, competitor teardowns, and original topics |
 | [`self-media-platform-copywriting`](skills/self-media-platform-copywriting/SKILL.md) | Native copy for X, Xiaohongshu, WeChat, and short-video platforms, plus the visual style library |
-| [`self-media-short-video`](skills/self-media-short-video/SKILL.md) | Hooks, spoken script, storyboard, captions, and shoot plan |
+| [`self-media-short-video`](skills/self-media-short-video/SKILL.md) | Hooks, spoken script, storyboard, captions, shoot plan, and optional digital-human production |
 | [`self-media-content-analytics`](skills/self-media-content-analytics/SKILL.md) | Data quality, comparable baselines, attribution, decisions, and experiments |
 | [`self-media-content-delivery`](skills/self-media-content-delivery/SKILL.md) | Milestone files, versions, path verification, and publishing packages |
 | [`self-media-wechat-publisher`](skills/self-media-wechat-publisher/SKILL.md) | WeChat formatting, image upload, draft creation, and image-message posts |
@@ -99,7 +101,7 @@ Use $self-media-content-analytics to review these 10 posts and identify the sing
 
 ```text
 Clarify → Direction approval* → Research & evidence → Platform approval* → Preflight
-→ Platform-native draft → Title approval* → Assets → Quality gates
+→ Platform-native draft → Title approval* → Assets (live-action / digital human) → Quality gates
 → Final-copy approval* → Publishing authorization* → Draft or publishing package → Review
 ```
 
@@ -112,6 +114,8 @@ Before assets are generated, the workflow recommends 2-3 styles from the [visual
 - No automated competitor scraping with a creator's primary account session
 - No automatic likes, comments, follows, DMs, or publishing
 - No cookies, tokens, or secrets in task cards, logs, or the repository
+- Digital-human portraits, likenesses, and voices must have confirmed usage rights; the user personally uploads and selects them in the chosen provider after reviewing its current data-processing terms
+- No original portraits or recordings, their local paths, temporary links, or digital-human provider-private identifiers in task cards, content registries, or the repository — only index paths of deliverables such as generated clips, final videos, and captions; confirm the required AI/digital-human disclosures per target platform
 - Stop immediately on CAPTCHAs, rate limits, or platform risk controls
 - Verify recent products, prices, versions, and platform rules against official sources
 - Never invent data, experience, revenue, user feedback, or test results

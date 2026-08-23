@@ -1,6 +1,6 @@
 ---
 name: self-media-content-workflow
-description: 通用自媒体内容生产与经营工作流。用于自媒体内容创作、选题策划、热点或竞品研究、多平台改写、短视频脚本、发布包、公众号草稿、内容数据分析、周复盘、月复盘和继续未完成任务。负责识别请求类型，调用创作简报、内容策略、热点竞品、平台文案、短视频、数据复盘和交付归档模块，并管理方向确认、标题确认、终稿确认和发布授权。
+description: 通用自媒体内容生产与经营工作流。用于自媒体内容创作、选题策划、热点或竞品研究、多平台改写、短视频脚本、数字人视频、发布包、公众号草稿、内容数据分析、周复盘、月复盘和继续未完成任务。负责识别请求类型，调用创作简报、内容策略、热点竞品、平台文案、短视频、数据复盘和交付归档模块，并管理方向确认、标题确认、终稿确认和发布授权。
 ---
 
 # 自媒体内容工作流
@@ -41,7 +41,7 @@ description: 通用自媒体内容生产与经营工作流。用于自媒体内�
 | 单篇或多平台创作 | `self-media-content-brief` → `self-media-platform-copywriting` | 创作简报和平台原生稿 |
 | 账号定位、选题池、栏目、内容日历 | `self-media-content-strategy` | 策略、选题池、栏目和排期 |
 | 热点追踪、关键词研究、竞品拆解 | `self-media-trend-radar` | 研究报告和原创选题 |
-| 口播、分镜、字幕、拍摄方案 | `self-media-short-video` | 可拍摄短视频包 |
+| 口播、分镜、字幕、拍摄方案、数字人视频 | `self-media-short-video` | 可拍摄短视频包；用户明确选择数字人、确认肖像与声音权利，并在所选平台手动上传和选定素材后，可进入数字人制片和成片交付 |
 | 单篇、周度或月度数据复盘 | `self-media-content-analytics` | 归因、决策和待验证实验 |
 | 保存、版本、发布包和归档 | `self-media-content-delivery` | 已核验文件和内容索引 |
 | 公众号排版、草稿箱写入、小绿书图片消息 | `self-media-wechat-publisher` | 已排版并核对的公众号草稿 |
@@ -92,7 +92,7 @@ description: 通用自媒体内容生产与经营工作流。用于自媒体内�
 
 读取 [platforms.md](references/platforms.md)，推荐一个主平台和最多两个扩展平台。说明每个平台的作用、产物和时间成本。
 
-读取 [preflight-and-registry.md](references/preflight-and-registry.md)。只检查已选平台的写作、图片、视频、草稿和数据能力。能力不可用时，给出手动发布包等降级方案。
+读取 [preflight-and-registry.md](references/preflight-and-registry.md)。只检查已选平台的写作、图片、视频、数字人敏感素材与平台就绪、视频合成与字幕、草稿和数据能力。能力不可用时，给出手动发布包等降级方案。数字人制作的权利确认、手动上传、第三方数据处理、生成、合成和验收边界见 [digital-human-production.md](references/digital-human-production.md)。
 
 ### 4. 生成平台原生初稿
 
@@ -108,7 +108,7 @@ description: 通用自媒体内容生产与经营工作流。用于自媒体内�
 
 选定风格写入任务卡视觉锚，再建立“文案到画面”映射。软件或产品内容有真实界面素材时使用真实素材，没有时使用场景或隐喻，不虚构产品 UI。
 
-视频调用 `self-media-short-video`。只有用户提供原片并明确选择剪辑时才制作成片，否则交付脚本、分镜、字幕、封面和发布字段。
+视频调用 `self-media-short-video`。默认没有原片时交付脚本、分镜、字幕、封面和发布字段。用户明确选择数字人制片时，必须先确认肖像与声音权利，并由用户本人在 Topview 或所选数字人平台中手动上传、创建和选定数字人及声音；本工作流不上传原始头像或录音。用户确认平台素材已就绪后，才调用可用适配器生成讲解片段，再合成画面解析、字幕和人物窗口，最后按目标平台核验比例、时长、声音、字幕和人物裁切。涉及付费生成时遵守运行时工具的费用确认规则。
 
 ### 6. 质量审校
 
@@ -138,11 +138,13 @@ description: 通用自媒体内容生产与经营工作流。用于自媒体内�
 ## 工具适配原则
 
 - 先发现当前环境已经提供的搜索、浏览器、图片、视频、文档、发布和数据工具。
+- 数字人生成、画面合成和字幕渲染遵循同一适配原则；Topview MCP 只在用户完成敏感素材手动上传并确认就绪后作为可选生成适配器，不是核心 Skill 的硬依赖。
 - 优先使用官方 API、已认证连接器或用户已登录的浏览器。
 - 不要求用户为了本 Skill 安装某个特定厂商工具。
 - 需要图表、表格或报告时复用当前环境已有的文档和数据能力。
 - 只有用户明确要求提醒或定期复盘时，才使用当前环境的调度能力。
 - 不把 Cookie、Token、Secret 或完整凭证写入任务卡、日志或仓库。
+- 不把原始头像、录音、本机路径、临时上传/下载链接、对象存储键或数字人平台私有标识写入任务卡、日志、内容注册表或仓库；运行时必需的资源标识只做本次操作的临时引用。
 - 采集工具默认只读。验证码、限流和平台风控出现时立即停止并交给用户。
 - B 站等平台可以作为公开只读研究源，但只有用户选择时才成为创作平台。
 
@@ -163,5 +165,6 @@ description: 通用自媒体内容生产与经营工作流。用于自媒体内�
 - 质量审校：[quality-gates.md](references/quality-gates.md)
 - 发布和复盘：[publishing-and-review.md](references/publishing-and-review.md)
 - 风格学习：[style-learning.md](references/style-learning.md)
+- 数字人视频制作：[digital-human-production.md](references/digital-human-production.md)
 - 任务卡：[content-task-template.md](assets/content-task-template.md)
 - 内容注册表：[content-registry-template.md](assets/content-registry-template.md)

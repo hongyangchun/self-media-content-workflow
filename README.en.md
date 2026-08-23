@@ -101,7 +101,7 @@ Use $self-media-content-analytics to review these 10 posts and identify the sing
 
 ```text
 Clarify → Direction approval* → Research & evidence → Platform approval* → Preflight
-→ Platform-native draft → Title approval* → Assets → Quality gates
+→ Platform-native draft → Title approval* → Assets (live-action / digital human) → Quality gates
 → Final-copy approval* → Publishing authorization* → Draft or publishing package → Review
 ```
 
@@ -114,6 +114,8 @@ Before assets are generated, the workflow recommends 2-3 styles from the [visual
 - No automated competitor scraping with a creator's primary account session
 - No automatic likes, comments, follows, DMs, or publishing
 - No cookies, tokens, or secrets in task cards, logs, or the repository
+- Digital-human portraits, likenesses, and voices must have confirmed usage rights; the user personally uploads and selects them in the chosen provider after reviewing its current data-processing terms
+- No original portraits, recordings, local paths, temporary links, or digital-human provider-private identifiers in task cards, content registries, or the repository; confirm the required AI/digital-human disclosures per target platform
 - Stop immediately on CAPTCHAs, rate limits, or platform risk controls
 - Verify recent products, prices, versions, and platform rules against official sources
 - Never invent data, experience, revenue, user feedback, or test results

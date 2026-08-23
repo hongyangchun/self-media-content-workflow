@@ -14,7 +14,7 @@ A modular, tool-agnostic suite of agent skills for social-media content operatio
 - **Evidence-first** — every key number needs a source; facts, opinions, inferences, and advice stay separated; no fabricated data, experience, or results
 - **Systematic visuals** — eight built-in image-style presets with platform routing; a style is chosen before generation, one style per image set, and account preferences override preset defaults
 
-For digital-human production, the user must personally upload and select likeness and voice assets in the chosen provider after reviewing its current data-processing terms. Task files, registries, and the repository must not store the original portrait, recording, local paths, temporary links, or provider-private identifiers.
+For digital-human production, the user must personally upload and select likeness and voice assets in the chosen provider after reviewing its current data-processing terms. Task files, registries, and the repository must not store the original portrait or recording, their local paths, temporary links, or provider-private identifiers; they only index paths of deliverables such as generated clips, final videos, and caption files.
 
 ## Architecture
 
@@ -115,7 +115,7 @@ Before assets are generated, the workflow recommends 2-3 styles from the [visual
 - No automatic likes, comments, follows, DMs, or publishing
 - No cookies, tokens, or secrets in task cards, logs, or the repository
 - Digital-human portraits, likenesses, and voices must have confirmed usage rights; the user personally uploads and selects them in the chosen provider after reviewing its current data-processing terms
-- No original portraits, recordings, local paths, temporary links, or digital-human provider-private identifiers in task cards, content registries, or the repository; confirm the required AI/digital-human disclosures per target platform
+- No original portraits or recordings, their local paths, temporary links, or digital-human provider-private identifiers in task cards, content registries, or the repository — only index paths of deliverables such as generated clips, final videos, and captions; confirm the required AI/digital-human disclosures per target platform
 - Stop immediately on CAPTCHAs, rate limits, or platform risk controls
 - Verify recent products, prices, versions, and platform rules against official sources
 - Never invent data, experience, revenue, user feedback, or test results

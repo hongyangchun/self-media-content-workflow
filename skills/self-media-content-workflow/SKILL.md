@@ -92,7 +92,7 @@ description: 通用自媒体内容生产与经营工作流。用于自媒体内�
 
 读取 [platforms.md](references/platforms.md)，推荐一个主平台和最多两个扩展平台。说明每个平台的作用、产物和时间成本。
 
-读取 [preflight-and-registry.md](references/preflight-and-registry.md)。只检查已选平台的写作、图片、视频原片或录屏、数字人敏感素材与平台就绪、视频合成与字幕、草稿和数据能力。能力不可用时，给出手动发布包等降级方案。数字人制作的权利确认、手动上传、第三方数据处理、生成、合成和验收边界见 [digital-human-production.md](references/digital-human-production.md)。
+读取 [preflight-and-registry.md](references/preflight-and-registry.md)。只检查已选平台的写作、图片、视频原片或录屏、数字人敏感素材与平台就绪、视频合成与字幕、草稿和数据能力。其中数字人敏感素材与平台就绪、视频合成与字幕仅在视频制作模式为数字人制片时检查；其他内容类型和真人出镜、素材解析任务将这两项标记为不适用，不因此进入 `AWAITING_USER`。能力不可用时，给出手动发布包等降级方案。数字人制作的权利确认、手动上传、第三方数据处理、生成、合成和验收边界见 [digital-human-production.md](references/digital-human-production.md)。
 
 ### 4. 生成平台原生初稿
 
